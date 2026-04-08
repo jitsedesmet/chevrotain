@@ -2797,6 +2797,25 @@ export declare function serializeGrammar(topRules: Rule[]): ISerializedGast[];
 export declare function serializeProduction(node: IProduction): ISerializedGast;
 
 /**
+ * Converts a Chevrotain grammar (array of top-level {@link Rule}s) to an EBNF
+ * text representation using W3C-style EBNF notation.
+ *
+ * Non-terminal rules are emitted first, followed by a blank line and then
+ * terminal token definitions. Terminal patterns are formatted as:
+ *   - `/pattern/flags` for RegExp patterns
+ *   - `"string"` for string literal patterns
+ *   - `/* custom token *\/` for function-based custom patterns
+ *   - `/* no pattern *\/` for tokens without a defined pattern
+ *
+ * The set of Rules can be obtained from a Parser **instance** via the
+ * {@link BaseParser.getGAstProductions} method.
+ *
+ * @param rules - The top-level grammar rules.
+ * @returns The grammar as an EBNF string.
+ */
+export declare function grammarToEbnf(rules: Rule[]): string;
+
+/**
  * @deprecated
  * This function no longer does anything, Avoid using this function
  * As it will be removed in future versions.

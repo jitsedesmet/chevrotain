@@ -62,6 +62,7 @@ export {
   serializeGrammar,
   serializeProduction,
   GAstVisitor,
+  grammarToEbnf,
 } from "@chevrotain/gast";
 
 export { generateCstDts } from "@chevrotain/cst-dts-gen";

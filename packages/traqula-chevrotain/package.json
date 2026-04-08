@@ -43,6 +43,8 @@
     "chevrotain": "workspace:*"
   },
   "devDependencies": {
-    "esbuild": "0.27.3"
+    "esbuild": "0.27.3",
+    "npm-run-all2": "8.0.4",
+    "shx": "0.4.0"
   }
 }

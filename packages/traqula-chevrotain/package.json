@@ -1,0 +1,48 @@
+{
+  "name": "@traqula/chevrotain",
+  "version": "11.2.0",
+  "description": "Exports the Chevrotain package with patched lodash and bundles a CJS version",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/esm/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/esm/**/*.d.ts",
+    "dist/esm/**/*.js",
+    "dist/esm/**/*.js.map",
+    "dist/cjs/**/*.js",
+    "dist/cjs/**/*.js.map",
+    "dist/cjs/package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jitsedesmet/chevrotain.git",
+    "directory": "packages/traqula-chevrotain"
+  },
+  "bugs": {
+    "url": "https://github.com/jitsedesmet/chevrotain/issues"
+  },
+  "scripts": {
+    "ci": "pnpm run build",
+    "build": "npm-run-all clean build:ts build:transpile",
+    "build:ts": "tsc -b",
+    "build:transpile": "esbuild src/index.ts --bundle --format=cjs --target=es2022 --outfile=dist/cjs/index.js --log-level=error",
+    "clean": "shx rm -rf dist/esm dist/cjs/index.js dist/cjs/index.js.map"
+  },
+  "dependencies": {
+    "chevrotain": "workspace:*"
+  },
+  "devDependencies": {
+    "esbuild": "0.27.3"
+  }
+}

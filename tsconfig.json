@@ -21,6 +21,9 @@
     },
     {
       "path": "./packages/cst-dts-gen-test"
+    },
+    {
+      "path": "./packages/traqula-chevrotain"
     }
   ],
   // needed to avoid trying to compile other .ts files in this repo

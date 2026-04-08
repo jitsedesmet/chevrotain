@@ -1,0 +1,4 @@
+dist/esm/
+dist/cjs/index.js
+dist/cjs/index.js.map
+dist/tsconfig.tsbuildinfo

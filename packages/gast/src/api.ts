@@ -21,3 +21,5 @@ export {
   isBranchingProd,
   isSequenceProd,
 } from "./helpers.js";
+
+export { grammarToEbnf } from "./grammar_to_ebnf.js";
